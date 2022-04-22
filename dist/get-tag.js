@@ -11,7 +11,7 @@ function element(tag, content = "", selfClosing = false, tagInfo = tag) {
  * @param {boolean} selfClosing Boolean representing a self closing element. Default: false
  * @return {string} A string representing the constructed HTML element.
  */
-module.exports = (tag, textContent, attributes, isSelfClosing = false) => {
+function getTag(tag, textContent, attributes, isSelfClosing = false) {
     const selfClosingTags = ["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"];
     tag = tag.toLowerCase();
     const selfClosing = selfClosingTags.includes(tag) || isSelfClosing;
@@ -23,4 +23,5 @@ module.exports = (tag, textContent, attributes, isSelfClosing = false) => {
         return element(tag, textContent, selfClosing, `${tag} ${fields.slice(0, fields.length - 1)}`);
     }
     return element(tag, textContent, selfClosing);
-};
+}
+module.exports = getTag;
