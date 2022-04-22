@@ -14,7 +14,7 @@ function element(tag: string, content: string="", selfClosing: boolean=false, ta
  * @param {boolean} selfClosing Boolean representing a self closing element. Default: false
  * @return {string} A string representing the constructed HTML element.
  */
-module.exports = (tag: string, textContent: string, attributes: Attributes | undefined, isSelfClosing: boolean=false): string => {
+function getTag(tag: string, textContent: string, attributes: Attributes | undefined, isSelfClosing: boolean=false): string {
     const selfClosingTags = ["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"];
     tag = tag.toLowerCase();
     const selfClosing = selfClosingTags.includes(tag) || isSelfClosing;
@@ -27,3 +27,5 @@ module.exports = (tag: string, textContent: string, attributes: Attributes | und
     }
     return element(tag, textContent, selfClosing);
 }
+
+module.exports = getTag;
