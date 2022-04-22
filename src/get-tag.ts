@@ -11,7 +11,7 @@ function element(tag: string, content: string="", selfClosing: boolean=false, ta
  * @param {string} tag HTML tag name.
  * @param {string} textContent Text content for the element.
  * @param {Attributes} attributes Object representing attribute key/value pairs.
- * @param {boolean} selfClosing Text content for the element. Default: false
+ * @param {boolean} selfClosing Boolean representing a self closing element. Default: false
  * @return {string} A string representing the constructed HTML element.
  */
 module.exports = (tag: string, textContent: string, attributes: Attributes | undefined, isSelfClosing: boolean=false): string => {
