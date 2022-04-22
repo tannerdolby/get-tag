@@ -46,4 +46,4 @@ test("Create empty self closing tag", () => {
     expect(tag("meta")).toBe(
         '<meta>'
     );
-})
+});
