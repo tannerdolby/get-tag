@@ -1,22 +1,29 @@
-# create-html-tag
-Quickly generate an HTML string on the fly with JavaScript.
+# get-tag
+Create an HTML tag string on the fly. Built with TypeScript.
 
 ## Installation
-```
-npm install create-html-tag
+Install the plugin from [npm](https://www.npmjs.com/package/get-tag):
+
+```js
+npm install get-tag
 ```
 
 ## Usage
 ```js
-createTag("a", {"href": "foo.com"}, "Some link");
+const getTag = require("get-tag");
+
+getTag("meta", null, {name: "author", content: "foo"});
+// <meta name="author" content="foo">
+
+getTag("a", "Some Link", {href: "foo.com"});
 // <a href="foo.com">Some link</a>
 
-createTag("title", {}, "Some Title");
+getTag("title", "Some Title");
 // <title>Some Title</title>
-
-createTag("meta", {"name": "author", "content": "foo"});
-// <meta name="author" content="foo">
 ```
 
 ## License
 MIT
+
+## Related projects
+- https://www.npmjs.com/package/html-tag
