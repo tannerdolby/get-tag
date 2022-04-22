@@ -26,10 +26,10 @@ getTag("meta", null, {name: "author", content: "foo"});
 ```js
 /**
  * Create HTML tag string.
- * @param {string} `tag` HTML tag name.
- * @param {string} `textContent` Text content for the element.
- * @param {Attributes} `attributes` Object representing attribute key/value pairs.
- * @param {boolean} `selfClosing` Text content for the element. Default: true
+ * @param {string} tag HTML tag name.
+ * @param {string} textContent Text content for the element.
+ * @param {Attributes} `ttributes Object representing attribute key/value pairs.
+ * @param {boolean} selfClosing Text content for the element. Default: true
  * @return {string} A string representing the constructed HTML element.
  */
 getTag(tag, textContent, attributes, selfClosing);

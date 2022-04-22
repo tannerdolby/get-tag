@@ -9,8 +9,9 @@ function element(tag: string, content: string="", selfClosing: boolean=false, ta
 /**
  * Create an HTML tag string.
  * @param {string} tag HTML tag name.
- * @param {Attributes} attributes An object representing attribute key/value pairs.
  * @param {string} textContent Text content for the element.
+ * @param {Attributes} attributes Object representing attribute key/value pairs.
+ * @param {boolean} selfClosing Text content for the element. Default: true
  * @return {string} A string representing the constructed HTML element.
  */
 module.exports = (tag: string, textContent: string="", attributes: Attributes | undefined, isSelfClosing: boolean = false): string => {
