@@ -1,5 +1,5 @@
 # get-tag
-Create an HTML tag string on the fly. Built with TypeScript.
+Create an HTML tag string on the fly.
 
 ## Installation
 Install the plugin from [npm](https://www.npmjs.com/package/get-tag):
@@ -26,4 +26,4 @@ getTag("title", "Some Title");
 MIT
 
 ## Related projects
-- https://www.npmjs.com/package/html-tag
+- [html-tag](https://www.npmjs.com/package/html-tag)
