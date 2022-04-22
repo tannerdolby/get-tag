@@ -22,12 +22,12 @@ getTag("meta", null, {name: "author", content: "foo"});
 // <meta name="author" content="foo">
 ```
 
-## Function details
+### Details
 ```js
 /**
  * @param {string} tag HTML tag name.
  * @param {string} textContent Text content for the element.
- * @param {Attributes} `ttributes Object representing attribute key/value pairs.
+ * @param {Attributes} attributes Object representing attribute key/value pairs.
  * @param {boolean} selfClosing Text content for the element. Default: false
  * @return {string} A string representing the constructed HTML element.
  */
