@@ -25,7 +25,6 @@ getTag("meta", null, {name: "author", content: "foo"});
 ## Function details
 ```js
 /**
- * Create HTML tag string.
  * @param {string} tag HTML tag name.
  * @param {string} textContent Text content for the element.
  * @param {Attributes} `ttributes Object representing attribute key/value pairs.
