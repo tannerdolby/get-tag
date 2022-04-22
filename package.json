@@ -1,6 +1,6 @@
 {
   "name": "get-tag",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Create an HTML tag string on the fly.",
   "main": "./dist/get-tag.js",
   "scripts": {
