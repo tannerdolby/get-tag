@@ -1,16 +1,30 @@
 {
-  "name": "create-html-tag",
-  "version": "0.0.1",
-  "description": "Create an HTML tag on the fly.",
-  "main": "./dist/create-element.js",
+  "name": "get-tag",
+  "version": "0.1.0",
+  "description": "Create an HTML tag string on the fly.",
+  "main": "./dist/get-tag.js",
   "scripts": {
     "build": "tsc",
-    "dev": "node ./dist/create-element.js",
+    "dev": "node ./dist/get-tag.js",
     "test": "jest"
   },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tannerdolby/get-tag.git"
+  },
+  "homepage": "https://github.com/tannerdolby/get-tag#readme",
+  "bugs": {
+    "url": "https://github.com/tannerdolby/get-tag/issues"
+  },
   "keywords": [
-    "html-tag",
-    "create-tag",
+    "html-tags",
+    "html-element",
+    "get-html-tag",
     "create-html-tag",
     "typescript"
   ],
