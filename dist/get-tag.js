@@ -5,9 +5,11 @@ function element(tag, content = "", selfClosing = false, tagInfo = tag) {
 ;
 /**
  * Create an HTML tag string.
- * @param {string} tag HTML tag name.
- * @param {Attributes} attributes An object representing attribute key/value pairs.
- * @param {string} textContent Text content for the element.
+ * @param {string} `tag` HTML tag name.
+ * @param {string} `textContent` Text content for the element.
+ * @param {Attributes} `attributes` Object representing attribute key/value pairs.
+ * @param {boolean} `selfClosing` Text content for the element. Default: true
+ * @return {string} A string representing the constructed HTML element.
  * @return {string} A string representing the constructed HTML element.
  */
 module.exports = (tag, textContent = "", attributes, isSelfClosing = false) => {
