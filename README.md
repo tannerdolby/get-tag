@@ -27,10 +27,10 @@ If the provided HTML tag name `tag` is apart of the [void-elements](https://www.
 
 ```js
 /**
- * @param {string} tag HTML tag name.
- * @param {string} textContent Text content for the element.
- * @param {Attributes} attributes Object representing attribute key/value pairs.
- * @param {boolean} selfClosing Boolean representing a self closing element. Default: false. (Or true if `tag` is a known void-element defined in the HTML spec)
+ * @param {string} `tag` HTML tag name.
+ * @param {string} `textContent` Text content for the element.
+ * @param {Attributes} `attributes` Object representing attribute key/value pairs.
+ * @param {boolean} `selfClosing` Boolean representing a self closing element. Default: false. (Or true if `tag` is a known void-element defined in the HTML spec)
  * @return {string} A string representing the constructed HTML element.
  */
 getTag(tag, textContent, attributes, selfClosing);
