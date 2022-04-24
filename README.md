@@ -23,7 +23,7 @@ getTag("meta", null, {name: "author", content: "foo"});
 ```
 
 ### Details
-If the provided HTML tag name `tag` is apart of the [void-elements](https://www.w3.org/TR/2011/WD-html-markup-20110113/syntax.html#void-elements))) list, then `selfClosing` will default to `true`.
+If the provided HTML tag name `tag` is apart of the [void-elements](https://www.w3.org/TR/2011/WD-html-markup-20110113/syntax.html#void-elements) list, then `selfClosing` will default to `true`.
 
 ```js
 /**
