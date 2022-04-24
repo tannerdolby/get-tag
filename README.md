@@ -2,7 +2,7 @@
 Create HTML tag strings on the fly.
 
 ## Installation
-Install the plugin from [npm](https://www.npmjs.com/package/get-tag):
+Install the package from [npm](https://www.npmjs.com/package/get-tag):
 
 ```bash
 npm install get-tag
