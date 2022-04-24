@@ -28,7 +28,7 @@ getTag("meta", null, {name: "author", content: "foo"});
  * @param {string} tag HTML tag name.
  * @param {string} textContent Text content for the element.
  * @param {Attributes} attributes Object representing attribute key/value pairs.
- * @param {boolean} selfClosing Boolean representing a self closing element. Default: false
+ * @param {boolean} selfClosing Boolean representing a self closing element. Default: false. (Can default to true if `tag` is a known void-element defined in the HTML spec.
  * @return {string} A string representing the constructed HTML element.
  */
 getTag(tag, textContent, attributes, selfClosing);
