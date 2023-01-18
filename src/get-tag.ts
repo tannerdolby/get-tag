@@ -17,19 +17,18 @@ function createElement(tagName: string, textContent: string='', attributes: stri
  */
 function getTag(tag: string, textContent: string, attributes: Attributes | undefined, selfClosing: boolean=false): string {
     const selfClosingTags = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'];
-    let fields = '';
+    let attrs = '';
 
     tag = tag.toLowerCase();
     selfClosing = selfClosingTags.includes(tag) || selfClosing;
 
     if (attributes && typeof attributes == 'object' && Object.keys(attributes).length > 0) {
         for (const key in attributes) {
-            fields += `${key}="${attributes[key]}" `;
+            attrs += `${key}="${attributes[key]}" `;
         }
-        return createElement(tag, textContent, fields.trim(), selfClosing);
     }
 
-    return createElement(tag, textContent, '', selfClosing);
+    return createElement(tag, textContent, attrs, selfClosing);
 }
 
 module.exports = getTag;
