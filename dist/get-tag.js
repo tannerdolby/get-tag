@@ -3,7 +3,6 @@ function createElement(tagName, textContent = '', attributes = '', selfClosing =
     const tagInfo = `${tagName} ${attributes}`.trim();
     return `<${tagInfo}>${!selfClosing ? `${textContent}</${tagName}>` : ''}`;
 }
-;
 /**
  * Create an HTML tag string.
  * @param {string} tag HTML tag name.

@@ -5,7 +5,7 @@ type Attributes = {
 function createElement(tagName: string, textContent: string = '', attributes: string = '', selfClosing: boolean = false): string {
     const tagInfo = `${tagName} ${attributes}`.trim();
     return `<${tagInfo}>${!selfClosing ? `${textContent}</${tagName}>` : ''}`;
-};
+}
 
 /**
  * Create an HTML tag string.
