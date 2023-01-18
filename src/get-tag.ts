@@ -2,7 +2,7 @@ type Attributes = {
     [key: string]: string | boolean;
 };
 
-function createElement(tagName: string, textContent: string='', attributes: string='', selfClosing: boolean=false): string {
+function createElement(tagName: string, textContent: string = '', attributes: string = '', selfClosing: boolean = false): string {
     const tagInfo = `${tagName} ${attributes}`.trim();
     return `<${tagInfo}>${!selfClosing ? `${textContent}</${tagName}>` : ''}`;
 };
@@ -15,7 +15,7 @@ function createElement(tagName: string, textContent: string='', attributes: stri
  * @param {boolean} selfClosing Boolean representing a self closing element. Default: false (or true if `tag` is a known [void-element](https://www.w3.org/TR/2011/WD-html-markup-20110113/syntax.html#void-elements))
  * @returns {string} A string representing the HTML element.
  */
-function getTag(tag: string, textContent: string, attributes: Attributes | undefined, selfClosing: boolean=false): string {
+function getTag(tag: string, textContent: string, attributes: Attributes | undefined, selfClosing: boolean = false): string {
     const selfClosingTags = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'];
     let attrs = '';
 

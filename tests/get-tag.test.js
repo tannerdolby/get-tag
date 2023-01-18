@@ -7,31 +7,31 @@ test("Create <title> tag with closing tags + no attributes", () => {
 });
 
 test("Create <a> tag with attributes + closing tag", () => {
-    expect(getTag("a", "Bug Saves The World", {href: "foo"})).toBe(
+    expect(getTag("a", "Bug Saves The World", { href: "foo" })).toBe(
         '<a href="foo">Bug Saves The World</a>'
     );
 });
 
 test("Create <meta> tag", () => {
-    expect(getTag("meta", null, {name: "author", content: "foo"})).toBe(
+    expect(getTag("meta", null, { name: "author", content: "foo" })).toBe(
         '<meta name="author" content="foo">'
     );
 });
 
 test("Create <link> tag", () => {
-    expect(getTag("link", null, {rel: "stylesheet", href: "style.css"})).toBe(
+    expect(getTag("link", null, { rel: "stylesheet", href: "style.css" })).toBe(
         '<link rel="stylesheet" href="style.css">'
     );
 });
 
 test("Create <p> tag", () => {
-    expect(getTag("p", "foo bar", {class: "text"})).toBe(
+    expect(getTag("p", "foo bar", { class: "text" })).toBe(
         '<p class="text">foo bar</p>'
     );
 });
 
 test("Create <img> tag", () => {
-    expect(getTag("img", null, {src: "foo.jpg", alt: "a test image"})).toBe(
+    expect(getTag("img", null, { src: "foo.jpg", alt: "a test image" })).toBe(
         '<img src="foo.jpg" alt="a test image">'
     );
 });
