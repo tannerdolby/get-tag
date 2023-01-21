@@ -2,11 +2,6 @@ type Attributes = {
     [key: string]: string | boolean;
 };
 
-function createElement(tagName: string, textContent: string = '', attributes: string = '', selfClosing: boolean = false): string {
-    const tagInfo = `${tagName} ${attributes}`.trim();
-    return `<${tagInfo}>${!selfClosing ? `${textContent}</${tagName}>` : ''}`;
-}
-
 /**
  * Create an HTML tag string.
  * @param {string} tag HTML tag name.
@@ -15,7 +10,11 @@ function createElement(tagName: string, textContent: string = '', attributes: st
  * @param {boolean} selfClosing Boolean representing a self closing element. Default: false (or true if `tag` is a known [void-element](https://www.w3.org/TR/2011/WD-html-markup-20110113/syntax.html#void-elements))
  * @returns {string} A string representing the HTML element.
  */
-function getTag(tag: string, textContent: string, attributes: Attributes | undefined, selfClosing: boolean = false): string {
+function getTag(tag: string, textContent: string='', attributes: Attributes | undefined={}, selfClosing: boolean = false): string {
+    if (!tag) {
+        throw new Error('Missing HTML tag name. The first parameter `tag` is required');
+    }
+
     const selfClosingTags = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'];
     let attrs = '';
 
@@ -28,7 +27,7 @@ function getTag(tag: string, textContent: string, attributes: Attributes | undef
         }
     }
 
-    return createElement(tag, textContent, attrs, selfClosing);
+    return `<${`${tag} ${attrs}`.trim()}>${selfClosing ? '' : `${textContent}</${tag}>`}`;
 }
 
 module.exports = getTag;
