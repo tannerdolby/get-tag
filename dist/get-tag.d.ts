@@ -11,4 +11,4 @@ declare function isObject(obj: Attributes): boolean;
  * @param {boolean} selfClosing Boolean representing a self closing element. Set to true if `tag` is a known [void-element](https://www.w3.org/TR/2011/WD-html-markup-20110113/syntax.html#void-elements)
  * @returns {string} A string representing the HTML element.
  */
-declare function getTag(tag: string, textContent?: string, attributes?: Attributes | undefined, selfClosing?: boolean): string;
+declare function getTag(tag: string, textContent?: string | null, attributes?: Attributes | null, selfClosing?: boolean): string;
