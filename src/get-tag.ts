@@ -1,33 +1,53 @@
-type Attributes = {
+type Attributes = Object & {
     [key: string]: string | boolean;
 };
+
+const selfClosingTags = [
+    'area',
+    'base',
+    'br',
+    'col',
+    'embed',
+    'hr',
+    'img',
+    'input',
+    'link',
+    'meta',
+    'param',
+    'source',
+    'track',
+    'wbr'
+];
+
+function isObject(obj: Attributes) {
+    if (!obj) return false;
+    return typeof obj === 'object' && obj.constructor === Object;
+}
 
 /**
  * Create an HTML tag string.
  * @param {string} tag HTML tag name.
  * @param {string} textContent Text content for the element.
  * @param {Object} attributes Object representing attribute key/value pairs.
- * @param {boolean} selfClosing Boolean representing a self closing element. Default: false (or true if `tag` is a known [void-element](https://www.w3.org/TR/2011/WD-html-markup-20110113/syntax.html#void-elements))
+ * @param {boolean} selfClosing Boolean representing a self closing element. Set to true if `tag` is a known [void-element](https://www.w3.org/TR/2011/WD-html-markup-20110113/syntax.html#void-elements)
  * @returns {string} A string representing the HTML element.
  */
-function getTag(tag: string, textContent: string='', attributes: Attributes | undefined={}, selfClosing: boolean = false): string {
-    if (!tag) {
-        throw new Error('Missing HTML tag name. The first parameter `tag` is required');
+function getTag(tag: string, textContent?: string, attributes?: Attributes | undefined, selfClosing?: boolean): string {
+    if (!tag || typeof tag !== 'string') {
+        throw new Error('Invalid HTML tag name. The first parameter `tag` is required and must be a string');
     }
 
-    const selfClosingTags = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'];
     let attrs = '';
-
     tag = tag.toLowerCase();
     selfClosing = selfClosingTags.includes(tag) || selfClosing;
 
-    if (attributes && typeof attributes == 'object' && Object.keys(attributes).length > 0) {
-        for (const key in attributes) {
-            attrs += `${key}="${attributes[key]}" `;
-        }
+    if (attributes && isObject(attributes)) {
+        Object.entries(attributes).forEach(([key, val]) => {
+            attrs += `${key}="${val}" `;
+        });
     }
 
-    return `<${`${tag} ${attrs}`.trim()}>${selfClosing ? '' : `${textContent}</${tag}>`}`;
+    return `<${`${tag} ${attrs}`.trim()}>${selfClosing ? '' : `${textContent || ''}</${tag}>`}`;
 }
 
 module.exports = getTag;
