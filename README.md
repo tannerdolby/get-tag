@@ -10,15 +10,15 @@ npm install get-tag
 
 ## Usage
 ```js
-const getTag = require("get-tag");
+const getTag = require('get-tag');
 
-getTag("title", "Some Title");
+getTag('title', 'Some Title');
 // <title>Some Title</title>
 
-getTag("a", "Some Link", {href: "foo.com"});
+getTag('a', 'Some Link', {href: 'foo.com'});
 // <a href="foo.com">Some link</a>
 
-getTag("meta", null, {name: "author", content: "foo"});
+getTag('meta', null, {name: 'author', content: 'foo'});
 // <meta name="author" content="foo">
 ```
 
