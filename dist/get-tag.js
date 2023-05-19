@@ -36,9 +36,9 @@ function getTag(tag, textContent, attributes, selfClosing) {
     tag = tag.toLowerCase();
     selfClosing = selfClosingTags.includes(tag) || selfClosing;
     if (attributes && isObject(attributes)) {
-        Object.entries(attributes).forEach(([key, val]) => {
-            attrs += `${key}="${val}" `;
-        });
+        for (const key in attributes) {
+            attrs += `${key}="${attributes[key]}" `;
+        }
     }
     return `<${`${tag} ${attrs}`.trim()}>${selfClosing ? '' : `${textContent || ''}</${tag}>`}`;
 }
